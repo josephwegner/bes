@@ -1,0 +1,34 @@
+{
+  "name": "Beyond D&D Beyond",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Help the D&D Beyond UI be a little bit... cooler.",
+  "homepage_url": "http://joewegner.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/background/background.html",
+    "persistent": false
+  },
+  "permissions": [
+    "https://www.dndbeyond.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.dndbeyond.com/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "src/inject/preinject.js",
+        "src/inject/features/mySources.js",
+        "src/inject/inject.js"
+
+      ]
+    }
+  ]
+}
