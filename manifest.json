@@ -26,10 +26,13 @@
       "run_at": "document_end",
       "js": [
         "src/inject/preinject.js",
+        "src/inject/features/characterLinks.js",
         "src/inject/features/mySources.js",
         "src/inject/features/sourceURL.js",
         "src/inject/inject.js"
-
+      ],
+      "css": [
+        "src/inject/inject.css"
       ]
     }
   ]

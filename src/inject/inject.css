@@ -1,0 +1,20 @@
+.dndb-character-link {
+  height: 38px;
+  background-color: #26282a;
+  border-radius: 3px;
+  padding: 4px;
+  overflow: hidden;
+}
+
+.dndb-character-link a {
+  height: 100%;
+}
+
+.dndb-character-link img {
+  height: 100%;
+  margin-right: 8px;
+}
+
+.dndb-character-link span {
+  vertical-align: middle;
+}

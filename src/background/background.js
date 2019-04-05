@@ -1,6 +1,11 @@
 import Utils from './utils.js'
 
 const ACTIONS = {
+  getCharacters: function (req, sender, respond) {
+    Utils.getCharacters().then(respond)
+    return true
+  },
+
   getSources: function (req, sender, respond) {
     Utils.getSources().then(respond)
     return true
