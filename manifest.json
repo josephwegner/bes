@@ -29,6 +29,7 @@
         "src/inject/features/characterLinks.js",
         "src/inject/features/mySources.js",
         "src/inject/features/sourceURL.js",
+        "src/inject/features/backToTop.js",
         "src/inject/inject.js"
       ],
       "css": [

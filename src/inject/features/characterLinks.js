@@ -9,7 +9,6 @@
     },
 
     run: () => {
-      console.log('run')
       chrome.extension.sendMessage({ action: 'getCharacters'}, (resp) => {
         characters = resp
 
@@ -22,7 +21,7 @@
   function buildDOMElements (characters) {
     characters.forEach((character) => {
       var wrapper = document.createElement('div')
-      wrapper.className = "mm-grid-button__button dndb-character-link"
+      wrapper.className = "mm-grid-button__button bdndb-character-link"
       wrapper.style.gridColumnEnd = "span 3"
       wrapper.style.gridRowEnd = "span 1"
 

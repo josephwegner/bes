@@ -1,4 +1,4 @@
-.dndb-character-link {
+.bdndb-character-link {
   height: 38px;
   background-color: #26282a;
   border-radius: 3px;
@@ -6,15 +6,28 @@
   overflow: hidden;
 }
 
-.dndb-character-link a {
+.bdndb-character-link a {
   height: 100%;
 }
 
-.dndb-character-link img {
+.bdndb-character-link img {
   height: 100%;
   margin-right: 8px;
 }
 
-.dndb-character-link span {
+.bdndb-character-link span {
   vertical-align: middle;
+}
+
+.bdndb-scrollToTop {
+    position: fixed;
+    bottom: 0;
+    left: 10px;
+    border-radius: 3px 3px 0 0;
+    margin: 0;
+    color: #26282a;
+    border: 1px solid #a5afba;
+    border-bottom: none;
+    font-size: 14px;
+    padding: 8px;
 }
