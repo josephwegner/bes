@@ -1,24 +1,54 @@
 export default function getSources () {
   return new Promise((resolve, reject) => {
-    Promise.all(SOURCES.map((src) => {
-      return new Promise((resolve, reject) => {
-        fetch(src.testResource)
-          .then((resp) => {
-            if (resp.redirected) {
-              resolve(false)
-            } else {
-              resolve(src)
-            }
-          })
-      })
-    })).then((availableSources) => {
-      var sources = []
-      availableSources.forEach((src) => {
-        if(src) { sources.push(src) }
-      })
+    checkLocalStorage()
+      .then(resolve)
+      .catch(refreshSources.bind(null, resolve, reject))
+  })
+}
 
-      resolve(sources)
+function refreshSources(resolve, reject) {
+  console.log('refreshing sources')
+
+  Promise.all(SOURCES.map((src) => {
+    return new Promise((resolve, reject) => {
+      fetch(src.testResource)
+        .then((resp) => {
+          if (resp.redirected) {
+            resolve(false)
+          } else {
+            resolve(src)
+          }
+        })
     })
+  })).then((availableSources) => {
+    var sources = []
+    availableSources.forEach((src) => {
+      if(src) { sources.push(src) }
+    })
+
+    resolve(sources)
+
+    var saveData = {
+      sources: sources,
+      refreshedAt: Date.now()
+    }
+    chrome.storage.local.set({ sources: saveData }, function() {
+      console.log('Saved sources');
+    });
+  })
+}
+
+function checkLocalStorage() {
+  return new Promise((resolve, reject) => {
+    chrome.storage.local.get(['sources'], function(result) {
+      var timeout = Date.now() - (1000 * 60 * 60)
+      if (result.sources && result.sources.refreshedAt > timeout) {
+        console.log('retrieved sources from local storage')
+        resolve(result.sources.sources)
+      } else {
+        reject()
+      }
+    });
   })
 }
 

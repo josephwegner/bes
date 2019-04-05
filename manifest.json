@@ -15,7 +15,8 @@
     "persistent": false
   },
   "permissions": [
-    "https://www.dndbeyond.com/*"
+    "https://www.dndbeyond.com/*",
+    "storage"
   ],
   "content_scripts": [
     {
@@ -26,6 +27,7 @@
       "js": [
         "src/inject/preinject.js",
         "src/inject/features/mySources.js",
+        "src/inject/features/sourceURL.js",
         "src/inject/inject.js"
 
       ]
