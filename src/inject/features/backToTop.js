@@ -2,7 +2,7 @@
   var scrollShown = false
   var scroller
 
-  bdndb.features.backToTop = {
+  bes.features.backToTop = {
     shouldRun: () => {
       return document.getElementsByClassName("sidebar-menu-top-link").length === 0
     },
@@ -11,7 +11,7 @@
       window.addEventListener('scroll', checkScroll)
       scroller = document.createElement('button')
       scroller.innerText = "Back to top"
-      scroller.className = "bdndb-scrollToTop"
+      scroller.className = "bes-scrollToTop"
       scroller.addEventListener('click', scrollToTop)
 
       checkScroll()

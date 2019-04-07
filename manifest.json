@@ -1,9 +1,9 @@
 {
-  "name": "Beyond D&D Beyond",
+  "name": "Beyond Enhancement Suite",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Help the D&D Beyond UI be a little bit... cooler.",
-  "homepage_url": "http://joewegner.com",
+  "description": " A suite of modules that enhance your D&D Beyond browsing experience better",
+  "homepage_url": "https://github.com/josephwegner/bes",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",

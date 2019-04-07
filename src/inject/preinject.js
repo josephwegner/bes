@@ -1,3 +1,3 @@
-window.bdndb = {
+window.bes = {
   features: {}
 }

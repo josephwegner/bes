@@ -9,7 +9,7 @@
   ]
   var sources
 
-  bdndb.features.sourceURL = {
+  bes.features.sourceURL = {
     shouldRun: () => {
       return MENU_BODY !== undefined
     },

@@ -5,7 +5,7 @@
 
   var sources = []
 
-  bdndb.features.mySources = {
+  bes.features.mySources = {
     shouldRun: () => {
       return INPUT_SELECT !== null
     },
@@ -21,7 +21,7 @@
   function injectCustomOption () {
     var opt = document.createElement("option")
     opt.innerText = ITEM_TEXT
-    opt.value = "bdndb_mySources"
+    opt.value = "bes_mySources"
     INPUT_SELECT.prepend(opt)
 
     var observer = new MutationObserver((mutations) => {

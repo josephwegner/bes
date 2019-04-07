@@ -1,4 +1,4 @@
-.bdndb-character-link {
+.bes-character-link {
   height: 38px;
   background-color: #26282a;
   border-radius: 3px;
@@ -6,20 +6,20 @@
   overflow: hidden;
 }
 
-.bdndb-character-link a {
+.bes-character-link a {
   height: 100%;
 }
 
-.bdndb-character-link img {
+.bes-character-link img {
   height: 100%;
   margin-right: 8px;
 }
 
-.bdndb-character-link span {
+.bes-character-link span {
   vertical-align: middle;
 }
 
-.bdndb-scrollToTop {
+.bes-scrollToTop {
     position: fixed;
     bottom: 0;
     left: 10px;
