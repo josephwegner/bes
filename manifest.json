@@ -1,6 +1,6 @@
 {
   "name": "Beyond Enhancement Suite",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": " A suite of modules that enhance your D&D Beyond browsing experience better",
   "homepage_url": "https://github.com/josephwegner/bes",
@@ -30,6 +30,7 @@
         "src/inject/features/mySources.js",
         "src/inject/features/sourceURL.js",
         "src/inject/features/backToTop.js",
+        "src/inject/features/lazyLoad.js",
         "src/inject/inject.js"
       ],
       "css": [

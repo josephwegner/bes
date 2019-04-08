@@ -12,7 +12,6 @@ function refreshCharacters(resolve, reject) {
   fetch("https://www.dndbeyond.com/my-characters")
     .then((body) => {
       body.text().then((html) => {
-        console.log(html)
         var parser = new DOMParser()
         var doc = parser.parseFromString(html, "text/html")
 

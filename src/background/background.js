@@ -9,6 +9,10 @@ const ACTIONS = {
   getSources: function (req, sender, respond) {
     Utils.getSources().then(respond)
     return true
+  },
+
+  executeOnTab: function(req, sender, respond) {
+    chrome.tabs.executeScript(sender.tab.id, { code: req.js })
   }
 }
 
