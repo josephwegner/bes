@@ -1,6 +1,6 @@
 {
   "name": "Beyond Enhancement Suite",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "manifest_version": 2,
   "description": " A suite of modules that make your D&D Beyond browsing experience better",
   "homepage_url": "https://github.com/josephwegner/bes",
