@@ -48,7 +48,7 @@
     if (currentPage >= maxPage) { return }
     var distanceFromBottom = LIST.getBoundingClientRect().bottom - document.body.getBoundingClientRect().height
 
-    if (!loading  && distanceFromBottom < 300) {
+    if (!loading  && distanceFromBottom < 50) {
       loadNextPage()
     }
   }
