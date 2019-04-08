@@ -33,8 +33,9 @@
       scr.innerHTML = `
         var $l = $('.listing')
         $l.on('click', '.info.bes-info', Waterdeep.ShowMore.toggleMoreInfo)
-        $l.on('hover', '.info.bes-info', Waterdeep.ShowMore.handleHoverChange)
-        $l.on('click', '.info.bes-info .fav-indicator', Waterdeep.ShowMore.toggleFavorite)
+        $l.on('click', '.bes-info .list-row', Waterdeep.ShowMore.getMoreInfoWithUrl)
+        $l.on('hover', '.info.bes-info, .bes-info .list-row', Waterdeep.ShowMore.handleHoverChange)
+        $l.on('click', '.bes-info .fav-indicator', Waterdeep.ShowMore.toggleFavorite)
       `
 
       document.documentElement.prepend(scr)
@@ -56,7 +57,10 @@
   function loadNextPage() {
     var urlWithoutPage = document.location.href.replace(/page=[0-9]+/, '')
     currentPage++
-    var url = `${urlWithoutPage}&page=${currentPage}`
+
+    var modifier = urlWithoutPage.indexOf('?') >= 0 ? '&' : '?'
+    var url = `${urlWithoutPage}${modifier}page=${currentPage}`
+    console.log(url)
 
     loading = true
     FOOTER.appendChild(loadingIcon)
@@ -66,7 +70,7 @@
           var parser = new DOMParser()
           var doc = parser.parseFromString(html, "text/html")
 
-          var nodes = doc.querySelectorAll('.listing .info')
+          var nodes = doc.querySelectorAll('.listing .info, .listing > li')
 
           Array.prototype.forEach.call(nodes, (node) => {
             node.className += ' bes-info'

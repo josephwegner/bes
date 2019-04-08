@@ -21,7 +21,6 @@
   function buildDOMElements (characters) {
     var cssHref = document.querySelectorAll("link[rel='stylesheet'][href*=compiled]")[0].href
       var version = cssHref.match(/\/Content\/([0-9-]+)\//)[1]
-    console.log(cssHref, version)
 
     characters.forEach((character) => {
       var wrapper = document.createElement('div')
@@ -70,7 +69,6 @@
     MENU_BODY.getElementsByClassName("mm-content-body")[0].style.height = "auto"
 
     characterNodes.forEach((node) => {
-      console.log(node)
       body.appendChild(node)
     })
   }
