@@ -12,6 +12,7 @@ function refreshCharacters(resolve, reject) {
   fetch("https://www.dndbeyond.com/my-characters")
     .then((body) => {
       body.text().then((html) => {
+        console.log(html)
         var parser = new DOMParser()
         var doc = parser.parseFromString(html, "text/html")
 
@@ -43,12 +44,12 @@ function findCharactersFromDOM(doc) {
     attributes = attributes.split('|').map((attr) => { return attr.trim() })
 
     var avatarNode = node.getElementsByClassName("ddb-campaigns-character-card-header-upper-portrait")[0].children[0]
-    var avatar = avatarNode.style.backgroundImage || 'url("//www.dndbeyond.com/Content/1-0-181-0/Skins/Waterdeep/images/characters/default-avatar.png")'
+    var avatar = avatarNode.style.backgroundImage
 
     return {
       name: name,
       link: link,
-      avatar: /\/\/[^"]+/g.exec(avatar)[0],
+      avatar: avatar ? /\/\/[^"]+/g.exec(avatar)[0] : null,
       level: attributes[0].replace('Lvl ', ''),
       race: attributes[1],
       class: attributes[2]

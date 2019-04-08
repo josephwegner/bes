@@ -19,6 +19,10 @@
   }
 
   function buildDOMElements (characters) {
+    var cssHref = document.querySelectorAll("link[rel='stylesheet'][href*=compiled]")[0].href
+      var version = cssHref.match(/\/Content\/([0-9-]+)\//)[1]
+    console.log(cssHref, version)
+
     characters.forEach((character) => {
       var wrapper = document.createElement('div')
       wrapper.className = "mm-grid-button__button bes-character-link"
@@ -29,7 +33,11 @@
       anchor.href = character.link
 
       var avatar = document.createElement('img')
-      avatar.setAttribute('src', character.avatar)
+      var avaURL = character.avatar
+      if (!avaURL) {
+        avaURL = `https://www.dndbeyond.com/Content/${version}/Skins/Waterdeep/images/characters/default-avatar.png`
+      }
+      avatar.setAttribute('src', avaURL)
 
       var name = document.createElement("span")
       name.innerText = character.name
