@@ -20,7 +20,7 @@
 
   function buildDOMElements (characters) {
     var cssHref = document.querySelectorAll("link[rel='stylesheet'][href*=compiled]")[0].href
-      var version = cssHref.match(/\/Content\/([0-9-]+)\//)[1]
+      var version = cssHref.match(/\/content\/([0-9-]+)\//)[1]
 
     characters.forEach((character) => {
       var wrapper = document.createElement('div')
@@ -34,7 +34,7 @@
       var avatar = document.createElement('img')
       var avaURL = character.avatar
       if (!avaURL) {
-        avaURL = `https://www.dndbeyond.com/Content/${version}/Skins/Waterdeep/images/characters/default-avatar.png`
+        avaURL = `https://www.dndbeyond.com/content/${version}/skins/waterdeep/images/characters/default-avatar.png`
       }
       avatar.setAttribute('src', avaURL)
 
